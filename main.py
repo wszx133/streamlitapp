@@ -14,13 +14,6 @@ import os
 
 path = os.getcwd()
 
-if os.path.exists(path+"\\stacking_model") and not os.path.exists(path+"\\stacking_model\\stacking_model1.pkl"):
-    merge = Merge(path+"\\stacking_model", path+"\\", "stacking_model.pkl")
-    merge.merge()
-    print("合并")
-else:
-    pass
-
 easychart.config.rendering.responsive = True
 
 st.set_page_config(
@@ -28,6 +21,15 @@ st.set_page_config(
     page_icon="🏥",
     layout="wide"
 )
+
+st.write(path)
+
+if os.path.exists(path+"\\stacking_model") and not os.path.exists(path+"\\stacking_model\\stacking_model1.pkl"):
+    merge = Merge(path+"\\stacking_model", path+"\\", "stacking_model.pkl")
+    merge.merge()
+    print("合并")
+else:
+    pass
 
 # Outcome mapping
 OUTCOME_LABELS = {
@@ -439,3 +441,4 @@ st.markdown(self_css_style, unsafe_allow_html=True)
 if __name__ == "__main__":
 
     main()
+
