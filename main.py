@@ -22,10 +22,8 @@ st.set_page_config(
     layout="wide"
 )
 
-st.write(os.path.exists(path+"/stacking_model"))
-
-if os.path.exists(path+"\\stacking_model") and not os.path.exists(path+"\\stacking_model\\stacking_model1.pkl"):
-    merge = Merge(path+"\\stacking_model", path+"\\", "stacking_model.pkl")
+if os.path.exists(path+"/stacking_model") and not os.path.exists(path+"/stacking_model/stacking_model1.pkl"):
+    merge = Merge(path+"/stacking_model", path+"/", "stacking_model.pkl")
     merge.merge()
     print("合并")
 else:
@@ -441,6 +439,7 @@ st.markdown(self_css_style, unsafe_allow_html=True)
 if __name__ == "__main__":
 
     main()
+
 
 
 
